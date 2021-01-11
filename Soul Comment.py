@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 url = []
-for start_value in range(0, 200, 20):
+for start_value in range(0, 220, 20):
     example = "https://movie.douban.com/subject/{}/comments?start={}&limit=20&status=P&sort=new_score".format(
         "24733428", start_value)
     url.append(example)
@@ -23,6 +23,7 @@ for i in range(len(short_comment)):
     for j in range(len(short_comment[i])):
         comment_list.append(short_comment[i][j].string)
 filename = 'Soul Comment.txt'
+open(filename, 'w+', encoding='utf-8')
 for i in range(len(comment_list)):
-    with open(filename, 'a', encoding='utf-8') as file_object:
+    with open(filename, 'a+', encoding='utf-8') as file_object:
         file_object.write(str(i + 1) + '. ' + comment_list[i] + '\n\n')
