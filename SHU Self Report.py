@@ -1,14 +1,15 @@
 import datetime as dt
 import time
-import threading
 import requests
 import yaml
 from bs4 import BeautifulSoup
-NEED_BEFORE = False
+NEED_BEFORE = True
 MONTHS = [10, 11]
 
 
 def get_time():
+    t = dt.datetime.utcnow()
+    t = t + dt.timedelta(hours=8)
     return t
 
 
