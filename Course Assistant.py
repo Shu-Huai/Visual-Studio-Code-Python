@@ -6,11 +6,8 @@ import os, time
 def take_lessons(driver_path, url, username, password, lesson_id, teacher_id,
                  campus, fucy):
     chromedriver = driver_path.strip()
-
     os.environ['webdriver.Chrome.driver'] = chromedriver
-
     driver = webdriver.Chrome(chromedriver)
-
     try:
         driver.get(url)
         driver.refresh()
@@ -24,7 +21,6 @@ def take_lessons(driver_path, url, username, password, lesson_id, teacher_id,
             time.sleep(60)
             take_lessons(driver_path, url, username, password, lesson_id,
                          teacher_id, campus)
-
     except:
         time.sleep(60)
         take_lessons(driver_path, url, username, password, lesson_id,
@@ -74,7 +70,6 @@ def choose_lesson(driver, lesson_id, teacher_id, campus, fucy):
                         selected = str(list(i)[index - 2]).split('>')[-2][:-4]
                         limit = str(list(i)[index - 4]).split('>')[-2][:-4]
                         print('人数：{}    容量：{}'.format(selected, limit))
-
                         if limit != selected:
                             driver.find_element_by_class_name(
                                 'rowchecker').click()
@@ -91,36 +86,15 @@ def choose_lesson(driver, lesson_id, teacher_id, campus, fucy):
 
 
 if __name__ == '__main__':
-    #################################################################################
-    #                                                                               #
-    #                            作者：SiliconHe                                     #
-    #                                                                               #
-    #                              版本：V1.0.1                                      #
-    #                                                                               #
-    #                           最后更新日期：2021/1/17                               #
-    #                                                                               #
-    #                            P.S.请连接校园网再启动                               #
-    #                                                                               #
-    #                                                                               #
-    #################################################################################
     '''请将自己的driver地址覆盖下面的默认地址'''
-
     driver_path = r'./Course Assistant.exe'
-
-    lessons_url = 'http://xk.autoisp.shu.edu.cn'  #不要动
-
-    username = '19120176'  #请输入自己的学号
-
-    password = 'Prwq0421'  #请输入自己的密码
-
-    lesson_id = '0200R213'  #请输入想要抢的课程号
-
-    teacher_id = '1000'  #请输入对应的老师号
-
-    campus = '宝山'  #请输入校区(宝山/延长/嘉定)
-
-    fucy = 0.5  #查询时间间隔，单位秒
-
+    lessons_url = 'http://xk.autoisp.shu.edu.cn'
+    username = '19120176'
+    password = 'Prwq0421'
+    lesson_id = '0200R213'
+    teacher_id = '1000'
+    campus = '宝山'
+    fucy = 0.5
     take_lessons(driver_path=driver_path,
                  url=lessons_url,
                  username=username,
