@@ -1,9 +1,3 @@
-# -*- coding = utf-8 -*-
-# @Author:何欣泽
-# @Time:2021/1/16 22:10
-# @File:lessons_helper.py
-# @Software:PyCharm
-
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os, time

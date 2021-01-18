@@ -155,7 +155,7 @@ def report(sess, t, temperature=37):
         return False
 
 
-with open('config.yaml', encoding='utf8') as f:
+with open('SHU Self Report.yaml', encoding='utf8') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 last_login_time = 0
 user_login_status = {
