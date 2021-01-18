@@ -82,7 +82,8 @@ def choose_lesson(driver, lesson_id, teacher_id, campus, fucy):
                             driver.find_element_by_id(
                                 'CourseCheckAction').click()
                             end_time = time.time()
-                            driver.get_screenshot_as_file('./resule.png')
+                            driver.get_screenshot_as_file(
+                                './Course Assistant.png')
                             print('恭喜，选课成功，共尝试%d次，共用%.3f秒钟' %
                                   (cout, (end_time - start_time)))
                             driver.quit()
@@ -104,7 +105,7 @@ if __name__ == '__main__':
     #################################################################################
     '''请将自己的driver地址覆盖下面的默认地址'''
 
-    driver_path = r'./chromedriver.exe'
+    driver_path = r'./Course Assistant.exe'
 
     lessons_url = 'http://xk.autoisp.shu.edu.cn'  #不要动
 
@@ -112,7 +113,7 @@ if __name__ == '__main__':
 
     password = 'Prwq0421'  #请输入自己的密码
 
-    lesson_id = '0100L603'  #请输入想要抢的课程号
+    lesson_id = '0200R213'  #请输入想要抢的课程号
 
     teacher_id = '1000'  #请输入对应的老师号
 
